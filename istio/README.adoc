@@ -17,8 +17,8 @@ data plane version: 1.4.0 (1 proxies)
 
 ----
 minishift profile set tutorial
-minishift config set memory 8GB
-minishift config set cpus 3
+minishift config set memory 10GB
+minishift config set cpus 4
 minishift config set vm-driver virtualbox
 minishift config set image-caching true
 minishift addon enable admin-user
@@ -44,6 +44,7 @@ oc edit scc anyuid
 curl -L https://github.com/istio/istio/releases/download/1.4.0/istio-1.4.0-osx.tar.gz -o istio140.tar.gz
 tar -xvzf istio140.tar.gz
 cd istio-1.4.0/
+istioctl manifest apply --set profile=demo
 ----
 
 
