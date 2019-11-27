@@ -48,6 +48,13 @@ cd istio-1.4.0/
 
 
 ----
+curl -L https://raw.githubusercontent.com/marcredhat/minishift/master/istio/IstioControlPlaneProfile.yaml -o IstioControlPlaneProfile.yaml
+
+istioctl manifest apply -f IstioControlPlaneProfile.yaml
+----
+
+
+----
 minishift openshift config set --target=kube --patch '{
         "admissionConfig": {
             "pluginConfig": {
@@ -172,10 +179,6 @@ oc adm policy add-scc-to-user anyuid -z istio-sidecar-injector-service-account -
 
 ----
 istioctl manifest apply --set profile=demo
-
-curl -L https://raw.githubusercontent.com/marcredhat/minishift/master/istio/IstioControlPlaneProfile.yaml -o IstioControlPlaneProfile.yaml
-
-istioctl manifest apply -f IstioControlPlaneProfile.yaml
 ----
 
 
