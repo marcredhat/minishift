@@ -228,7 +228,8 @@ for i in install/kubernetes/helm/istio-init/files/crd*yaml; do kubectl apply -f 
 
 
 ----
-Try again
+Go back to the istio-1.4.0 directory and try again
+cd ..
 oc apply -f samples/helloworld/helloworld-gateway.yaml
 MacBook-Pro:istio-1.2.0 marcchisinevski$ oc apply -f samples/helloworld/helloworld-gateway.yaml
 gateway.networking.istio.io/helloworld-gateway created
