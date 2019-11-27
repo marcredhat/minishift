@@ -98,6 +98,26 @@ EOF
 
 
 ----
+KIALI_USERNAME=$(echo -n "kiali" | base64)
+KIALI_PASSPHRASE=$(echo -n "REPLACE_WITH_YOUR_SECURE_PASSWORD" | base64)
+
+cat <<EOF | kubectl apply -f -
+apiVersion: v1
+kind: Secret
+metadata:
+  name: kiali
+  namespace: istio-system
+  labels:
+    app: kiali
+type: Opaque
+data:
+  username: $KIALI_USERNAME
+  passphrase: $KIALI_PASSPHRASE
+EOF
+----
+
+
+----
 oc adm policy add-scc-to-user anyuid system:serviceaccount:istio-system:istio-ingress-service-account
 oc adm policy add-scc-to-user anyuid system:serviceaccount:istio-system:default
 oc adm policy add-scc-to-user anyuid system:serviceaccount:istio-system:grafana
