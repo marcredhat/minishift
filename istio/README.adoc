@@ -385,5 +385,18 @@ minishift openshift service kiali --in-browser
 ----
 
 
+----
+minishift ip
+192.168.99.101
+----
+
+
+----
+oc  get svc istio-ingressgateway -n istio-system
+NAME                   TYPE           CLUSTER-IP      EXTERNAL-IP                   PORT(S)                                                                                                                      AGE
+istio-ingressgateway   LoadBalancer   172.30.78.141   172.29.117.22,172.29.117.22   15020:32687/TCP,80:31175/TCP,443:32246/TCP,15029:31994/TCP,15030:32020/TCP,15031:32439/TCP,15032:31592/TCP,15443:30556/TCP   11h
+----
+
+
 image:images/kiali.png[title="Kiali"]
 
