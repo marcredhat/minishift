@@ -307,12 +307,12 @@ Note (see VirtualService above) that we are matching on URI "/hello"
 ----
 oc  get svc istio-ingressgateway -n istio-system
 NAME                   TYPE           CLUSTER-IP       EXTERNAL-IP                   PORT(S)                                                                                                                                      AGE
-istio-ingressgateway   LoadBalancer   172.30.199.207   172.29.176.65,172.29.176.65   15020:30409/TCP,80:31380/TCP,443:31390/TCP,31400:31400/TCP,15029:31636/TCP,15030:31416/TCP,15031:30086/TCP,15032:30817/TCP,15443:31868/TCP   1h
+istio-ingressgateway   LoadBalancer   172.30.199.207   172.29.176.65,172.29.176.65   15020:30409/TCP,80:31175/TCP,443:31390/TCP,31400:31400/TCP,15029:31636/TCP,15030:31416/TCP,15031:30086/TCP,15032:30817/TCP,15443:31868/TCP   1h
 ----
 
 
 ----
-Note (see istio-ingressgateway LoadBalancer above) 80:31380 
+Note (see istio-ingressgateway LoadBalancer above) 80:31175
 ----
 
 ----
@@ -322,7 +322,7 @@ minishift ip
 
 
 
-We can browse to http://192.168.99.101:31380 
+We can browse to http://192.168.99.101:31175 
 
 Hello version v1 
 
@@ -330,7 +330,7 @@ image:images/1.png[title="Hello v1"]
 
 
 
-Refresh http://192.168.99.101:31380 
+Refresh http://192.168.99.101:31175
 
 Hello version v2
 
