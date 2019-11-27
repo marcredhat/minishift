@@ -178,12 +178,7 @@ oc adm policy add-scc-to-user anyuid -z istio-sidecar-injector-service-account -
 
 
 ----
-istioctl manifest apply --set profile=demo
-----
-
-
-----
-oc get pods
+oc get pods -n istio-system
 NAME                                      READY     STATUS    RESTARTS   AGE
 grafana-964fdb684-hpd2p                   1/1       Running   0          15s
 istio-citadel-5d69bfffd9-kskvt            1/1       Running   0          5m
