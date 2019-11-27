@@ -261,6 +261,16 @@ Warn [IST0103] (Pod persistent-volume-setup-stkgb.default) The pod is missing it
 Warn [IST0103] (Pod router-1-l97w9.default) The pod is missing its Istio proxy. Run 'kubectl delete pod router-1-l97w9 -n default' to restart it
 ----
 
+
+----
+oc delete pod docker-registry-1-dpgfr -n default
+oc delete pod helloworld-v1-8cf5c9bb4-vnm2k -n default
+oc delete pod helloworld-v2-544867d8d6-qbzng -n default
+oc delete pod persistent-volume-setup-stkgb -n default
+oc delete pod router-1-l97w9 -n default
+----
+
+
 ----
 oc project default
 Already on project "default" on server "https://192.168.99.101:8443".
