@@ -380,7 +380,10 @@ deployment.apps/helloworld-v1 configured
 deployment.apps/helloworld-v2 configured
 ----
 
-
+----
 minishift openshift service kiali --in-browser
-image:images/1.png[title="kiali"]
+----
+
+
+image:images/kiali.png[title="Kiali"]
 
