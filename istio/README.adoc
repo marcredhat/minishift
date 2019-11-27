@@ -408,13 +408,24 @@ image:images/kiali.png[title="Kiali"]
 
 
 ----
-When you deploy an application into a Service Mesh running in an OpenShift environment, it is necessary to relax the security constraints placed on the application by its service account to ensure the application can function correctly. Each service account must be granted permissions with the anyuid and privileged Security Context Constraints (SCC) to enable the sidecars to run correctly.
+When you deploy an application into a Service Mesh running in an OpenShift environment, 
+it is necessary to relax the security constraints placed on the application by 
+its service account to ensure the application can function correctly. 
 
-The privileged SCC is required to ensure changes to the pod’s networking configuration is updated successfully with the istio-init initialization container and the anyuid SCC is required to enable the sidecar container to run with its required user id of 1337.
+Each service account must be granted permissions with the anyuid and privileged 
+Security Context Constraints (SCC) to enable the sidecars to run correctly.
 
-To configure the correct permissions it is necessary to identify the service accounts being used by your application’s pods. For most applications, this will be the default service account, however your Deployment/DeploymentConfig may override this within the pod specification by providing the serviceAccountName.
+The privileged SCC is required to ensure changes to the pod’s networking configuration
+is updated successfully with the istio-init initialization container and
+the anyuid SCC is required to enable the sidecar container to run with its required user id of 1337.
 
-Example 
+To configure the correct permissions it is necessary to 
+`identify the service accounts being used by your application’s pods`. 
+
+For most applications, this will be the default service account, 
+however your Deployment/DeploymentConfig may override this within the pod specification by providing the serviceAccountName.
+
+`Example`
 istioctl kube-inject -f samples/sleep/sleep.yaml  | oc apply -f -
 oc adm policy add-scc-to-user anyuid -z sleep -n default 
 oc adm policy add-scc-to-user privileged -z sleep -n default 
