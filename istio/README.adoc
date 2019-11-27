@@ -367,3 +367,20 @@ We can browse to the OpenShift 3.11 dashboard https://192.168.99.101:8443/consol
 
 image:images/dash.png[title="OpenShift 3.11 dashboard"]
 
+
+
+== Kiali
+
+
+----
+oc project default
+istioctl kube-inject -f samples/helloworld/helloworld.yaml  | oc apply -f -
+service/helloworld unchanged
+deployment.apps/helloworld-v1 configured
+deployment.apps/helloworld-v2 configured
+----
+
+
+minishift openshift service kiali --in-browser
+image:images/1.png[title="kiali"]
+
