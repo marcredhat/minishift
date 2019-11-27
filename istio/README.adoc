@@ -117,6 +117,12 @@ EOF
 ----
 
 
+
+
+----
+oc patch scc/privileged --patch {\"allowedCapabilities\":[\"NET_ADMIN\"]}
+----
+
 ----
 oc adm policy add-scc-to-user anyuid system:serviceaccount:istio-system:istio-ingress-service-account
 oc adm policy add-scc-to-user anyuid system:serviceaccount:istio-system:default
