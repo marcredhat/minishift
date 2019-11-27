@@ -251,6 +251,16 @@ oc label namespace default istio-injection=enabled
 namespace/default labeled
 ----
 
+
+----
+istioctl x analyze -k -n default
+Warn [IST0103] (Pod docker-registry-1-dpgfr.default) The pod is missing its Istio proxy. Run 'kubectl delete pod docker-registry-1-dpgfr -n default' to restart it
+Warn [IST0103] (Pod helloworld-v1-8cf5c9bb4-vnm2k.default) The pod is missing its Istio proxy. Run 'kubectl delete pod helloworld-v1-8cf5c9bb4-vnm2k -n default' to restart it
+Warn [IST0103] (Pod helloworld-v2-544867d8d6-qbzng.default) The pod is missing its Istio proxy. Run 'kubectl delete pod helloworld-v2-544867d8d6-qbzng -n default' to restart it
+Warn [IST0103] (Pod persistent-volume-setup-stkgb.default) The pod is missing its Istio proxy. Run 'kubectl delete pod persistent-volume-setup-stkgb -n default' to restart it
+Warn [IST0103] (Pod router-1-l97w9.default) The pod is missing its Istio proxy. Run 'kubectl delete pod router-1-l97w9 -n default' to restart it
+----
+
 ----
 oc project default
 Already on project "default" on server "https://192.168.99.101:8443".
