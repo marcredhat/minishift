@@ -418,6 +418,7 @@ deployment.apps/helloworld-v2 configured
 ----
 
 ----
+oc expose svc kiali -n istio-system
 minishift openshift service kiali --in-browser
 ----
 
