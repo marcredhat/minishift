@@ -41,6 +41,15 @@ oc edit scc anyuid
 
 
 ----
+curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/darwin/amd64/kubectl"
+
+sudo cp ./kubectl /usr/local/bin
+
+sudo cp ./bin/istioctl /usr/local/bin
+----
+
+
+----
 curl -L https://github.com/istio/istio/releases/download/1.4.0/istio-1.4.0-osx.tar.gz -o istio140.tar.gz
 tar -xvzf istio140.tar.gz
 cd istio-1.4.0/
@@ -73,15 +82,6 @@ minishift openshift config set --target=kube --patch '{
 } }
 } }
 }'
-----
-
-
-----
-curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/darwin/amd64/kubectl"
-
-sudo cp ./kubectl /usr/local/bin
-
-sudo cp ./bin/istioctl /usr/local/bin
 ----
 
 
