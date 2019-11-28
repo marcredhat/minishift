@@ -72,6 +72,12 @@ minishift openshift config set --target=kube --patch '{
 ----
 
 
+
+----
+oc new-project istio-system
+----
+
+
 ----
 export GRAFANA_USERNAME=$(echo -n "grafana" | base64)
 export GRAFANA_PASSPHRASE=$(echo -n "REPLACE_WITH_YOUR_SECURE_PASSWORD" | base64)
