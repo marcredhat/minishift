@@ -242,7 +242,8 @@ for i in install/kubernetes/helm/istio-init/files/crd*yaml; do kubectl apply -f 
 Go back to the istio-1.4.0 directory and try again
 cd ..
 oc apply -f samples/helloworld/helloworld-gateway.yaml
-MacBook-Pro:istio-1.2.0 marcchisinevski$ oc apply -f samples/helloworld/helloworld-gateway.yaml
+oc apply -f samples/helloworld/helloworld-gateway.yaml
+
 gateway.networking.istio.io/helloworld-gateway created
 virtualservice.networking.istio.io/helloworld created
 
@@ -397,10 +398,13 @@ Hello version v2
 image:images/2.png[title="Hello v2"]
 
 
-
+----
 minishift dashboard
 
-We can browse to the OpenShift 3.11 dashboard https://192.168.99.101:8443/console
+We can browse to the OpenShift 3.11 dashboard at https://192.168.99.101:8443/console
+
+(Replace 192.168.99.101 with the value returned by "minishift ip")
+----
 
 image:images/dash.png[title="OpenShift 3.11 dashboard"]
 
