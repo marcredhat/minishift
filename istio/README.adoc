@@ -46,6 +46,8 @@ curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s ht
 sudo cp ./kubectl /usr/local/bin
 
 sudo cp ./bin/istioctl /usr/local/bin
+
+sudo chmod +x /usr/local/bin/kubectl
 ----
 
 
