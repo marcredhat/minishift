@@ -466,3 +466,11 @@ istioctl kube-inject -f samples/sleep/sleep.yaml  | oc apply -f -
 oc adm policy add-scc-to-user anyuid -z sleep -n default 
 oc adm policy add-scc-to-user privileged -z sleep -n default 
 ----
+
+
+----
+NOTE: On CodeReady Containers / OpenShift 4.2+
+istioctl x analyze -k
+wget https://raw.githubusercontent.com/marcredhat/minishift/master/istio/helloworldinject.yaml
+istioctl kube-inject -f ./helloworldinject.yaml  | oc apply -f -
+----
