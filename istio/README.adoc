@@ -216,11 +216,10 @@ prometheus-67698bcb6f-4r228               1/1       Running   0          1m
 oc project default
 ----
 
+
 ----
-oc apply -f samples/helloworld/helloworld.yaml
-service/helloworld created
-deployment.apps/helloworld-v1 created
-deployment.apps/helloworld-v2 created
+wget https://raw.githubusercontent.com/marcredhat/minishift/master/istio/helloworldinject.yaml
+istioctl kube-inject -f ./helloworldinject.yaml  | oc apply -f -
 ----
 
 
