@@ -180,6 +180,13 @@ istioctl manifest apply --set profile=demo --set cni.enabled=true
 ----
 
 
+
+----
+oc label namespace default istio-injection=enabled
+namespace/default labeled
+----
+
+
 ----
 curl -L https://raw.githubusercontent.com/marcredhat/minishift/master/istio/IstioControlPlaneProfile.yaml -o IstioControlPlaneProfile.yaml
 
@@ -254,12 +261,6 @@ OK, so this worked.
 istioctl x analyze -k -n default
 Warn [IST0102] (Namespace default) The namespace is not enabled for Istio injection. Run 'kubectl label namespace default istio-injection=enabled' to enable it, or 'kubectl label namespace default istio-injection=disabled' to explicitly mark it as not needing injection
 Error: Analyzer found issues.
-----
-
-
-----
-oc label namespace default istio-injection=enabled
-namespace/default labeled
 ----
 
 
