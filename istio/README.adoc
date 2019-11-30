@@ -472,4 +472,5 @@ NOTE: On CodeReady Containers / OpenShift 4.2+
 istioctl x analyze -k
 wget https://raw.githubusercontent.com/marcredhat/minishift/master/istio/helloworldinject.yaml
 istioctl kube-inject -f ./helloworldinject.yaml  | oc apply -f -
+istioctl manifest apply --set profile=demo --set cni.enabled=true
 ----
